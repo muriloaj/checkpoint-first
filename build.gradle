@@ -43,13 +43,14 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-activemq')
 	compile('org.springframework.boot:spring-boot-starter-actuator')
-	compile('org.springframework.boot:spring-boot-starter-amqp')
+	//compile('org.springframework.boot:spring-boot-starter-amqp')
 	compile('org.springframework.boot:spring-boot-starter-aop')
 	compile('org.springframework.boot:spring-boot-starter-data-elasticsearch')
-	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
-	compile('org.springframework.boot:spring-boot-starter-data-redis')
+	//compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+	//compile('org.springframework.boot:spring-boot-starter-data-redis')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
+
 	compile('com.fasterxml.jackson.module:jackson-module-kotlin')
 	compile('org.springframework.retry:spring-retry')
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -57,4 +58,8 @@ dependencies {
 	runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
+
+	//Logs
+	compile ('ch.qos.logback:logback-access:1.1.8')
+
 }

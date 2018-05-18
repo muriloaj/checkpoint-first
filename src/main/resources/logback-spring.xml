@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <!-- Para configurar o layout do log, appenders e nível de log do root, não utilizar o base.xml abaixo, mas copiar
+         o código desse arquivo base.xml e editar -->
+    <!--<include resource="org/springframework/boot/logging/logback/base.xml" />-->
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/spring.log}"/>
+    <include resource="org/springframework/boot/logging/logback/file-appender.xml"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta}
+                %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} [%X{username}@%X{req.requestURI}]
+                : %msg [%M\(\)] .\(%file:%line\)%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <!--<logger name="org.springframework.security" level="info"/>-->
+    <!--<logger name="org.springframework.dao.support" level="debug"/>-->
+    <!--<logger name="org.springframework.transaction.interceptor.RuleBasedTransactionAttribute" level="trace" />-->
+    <!--<logger name="org.springframework.transaction.interceptor.TransactionInterceptor" level="trace" />-->
+    <!--<logger name="org.springframework.security.provisioning.JdbcUserDetailsManager" level="debug"/>-->
+    <!--<logger name="org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod" level="trace" />-->
+    <!--<logger name="org.springframework.web.filter.CommonsRequestLoggingFilter" level="debug" />-->
+    <logger name="org.springframework.security.authentication" level="trace"/>
+    <logger name="com.github.muriloaj.checkpoint.first" level="trace"/>
+
+    <root level="info">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
