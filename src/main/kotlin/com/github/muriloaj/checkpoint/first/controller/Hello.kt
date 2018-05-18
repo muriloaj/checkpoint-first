@@ -20,6 +20,7 @@ public class Hello {
         log.info("The return will be ' $textReturn ' ")
         log.warn("The return will be ' $textReturn ' ")
         log.error("The return will be ' $textReturn ' ")
+        log.fatal("The return will be ' $textReturn ' ")
 
 
         return textReturn
