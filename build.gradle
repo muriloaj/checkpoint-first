@@ -61,5 +61,6 @@ dependencies {
 
 	//Logs
 	compile ('ch.qos.logback:logback-access:1.1.8')
+	compile ('com.internetitem:logback-elasticsearch-appender:1.6')
 
 }
